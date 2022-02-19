@@ -1,0 +1,446 @@
+2022-02-16 14:24:07,490 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 14:24:11,274 django.request 230 WARNING  Not Found: /
+2022-02-16 14:24:18,117 demo.views   16 ERROR    [Errno 2] No such file or directory: 'test.txt'
+2022-02-16 14:24:18,118 django.request 230 ERROR    Internal Server Error: /demo/home
+Traceback (most recent call last):
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\envelope\demo\views.py", line 18, in home
+    return render(request, 'home.html')
+  File "F:\Python3.6\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "F:\Python3.6\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "F:\Python3.6\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: home.html
+2022-02-16 16:09:28,311 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 16:13:56,313 django.request 230 ERROR    Internal Server Error: /demo/snatch
+Traceback (most recent call last):
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\base.py", line 188, in _get_response
+    self.check_response(response, callback)
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\base.py", line 311, in check_response
+    "instead." % name
+ValueError: The view demo.views.snatch_view didn't return an HttpResponse object. It returned None instead.
+2022-02-16 16:14:44,108 django.request 230 ERROR    Internal Server Error: /demo/snatch
+Traceback (most recent call last):
+  File "F:\Python3.6\lib\site-packages\django\utils\datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'uid'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\envelope\demo\views.py", line 15, in snatch_view
+    uid = request.POST['uid']
+  File "F:\Python3.6\lib\site-packages\django\utils\datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'uid'
+2022-02-16 16:17:09,657 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-16 16:17:09,997 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 16:17:14,009 django.request 230 ERROR    Internal Server Error: /demo/snatch
+Traceback (most recent call last):
+  File "F:\Python3.6\lib\site-packages\django\utils\datastructures.py", line 76, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'uid'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\envelope\demo\views.py", line 16, in snatch_view
+    uid = request.POST['uid']
+  File "F:\Python3.6\lib\site-packages\django\utils\datastructures.py", line 78, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'uid'
+2022-02-16 16:20:44,559 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-16 16:20:44,897 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 16:20:48,377 django.request 230 ERROR    Internal Server Error: /demo/snatch
+Traceback (most recent call last):
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\envelope\demo\views.py", line 17, in snatch_view
+    logger.info("ÇÀºì°ü--> uid: " + uid)
+TypeError: must be str, not int
+2022-02-16 16:21:22,671 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-16 16:21:23,013 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 16:21:29,301 demo.views   17 INFO     ÇÀºì°ü--> uid: 123
+2022-02-16 17:32:15,049 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 17:33:44,263 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 17:35:16,472 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 17:39:20,418 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 17:39:29,360 demo.views   19 INFO     ÇÀºì°ü--> uid: 123
+2022-02-16 17:41:49,996 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-16 17:41:50,334 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 17:41:59,638 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-16 17:41:59,977 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 17:42:02,906 demo.views   19 INFO     ÇÀºì°ü--> uid: 123
+2022-02-16 17:43:05,207 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-16 17:43:05,556 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 17:43:08,875 demo.views   19 INFO     ÇÀºì°ü--> uid: 123
+2022-02-16 17:44:11,824 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-16 17:44:12,185 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 17:44:14,363 demo.views   19 INFO     ÇÀºì°ü--> uid: 123
+2022-02-16 17:46:32,607 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-16 17:46:34,466 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 17:53:08,179 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\envelope\settings.py changed, reloading.
+2022-02-16 17:53:08,525 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 18:05:29,944 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 18:05:44,689 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 18:06:08,776 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 18:07:13,223 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 18:09:16,907 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 18:09:24,143 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\urls.py changed, reloading.
+2022-02-16 18:09:27,422 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-16 18:09:34,589 django.request 230 WARNING  Not Found: /
+2022-02-16 18:09:40,655 django.request 230 ERROR    Internal Server Error: /demo/init
+Traceback (most recent call last):
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\envelope\demo\views.py", line 41, in init_view
+    warmup.mysql_init()
+TypeError: mysql_init() missing 1 required positional argument: 'self'
+2022-02-16 18:10:30,858 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-16 18:10:31,199 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-17 13:18:29,747 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-17 13:18:39,691 django.request 230 ERROR    Internal Server Error: /demo/init
+Traceback (most recent call last):
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\envelope\demo\views.py", line 47, in init_view
+    w.redis_init()
+  File "C:\Users\Administrator\PycharmProjects\envelope\demo\init.py", line 22, in redis_init
+    snatchTimeList = random.sample(range(now, now + settings.CONTINUETIME), settings.MAXENVELOPECOUNT)
+TypeError: 'float' object cannot be interpreted as an integer
+2022-02-17 13:18:40,038 django.request 230 WARNING  Not Found: /favicon.ico
+2022-02-17 13:21:11,501 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\init.py changed, reloading.
+2022-02-17 13:21:11,849 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-17 13:22:24,173 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\init.py changed, reloading.
+2022-02-17 13:22:24,528 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-17 13:22:34,883 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\init.py changed, reloading.
+2022-02-17 13:22:35,224 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-17 13:23:11,950 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\init.py changed, reloading.
+2022-02-17 13:23:12,304 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-17 13:23:56,172 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\init.py changed, reloading.
+2022-02-17 13:23:56,535 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-17 13:24:49,557 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\init.py changed, reloading.
+2022-02-17 13:24:49,908 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-17 13:25:51,019 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\init.py changed, reloading.
+2022-02-17 13:25:51,361 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-17 13:26:12,886 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\init.py changed, reloading.
+2022-02-17 13:26:13,230 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-17 13:27:09,260 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\init.py changed, reloading.
+2022-02-17 13:27:09,607 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-17 13:27:20,970 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\init.py changed, reloading.
+2022-02-17 13:27:21,317 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-17 13:28:26,545 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\init.py changed, reloading.
+2022-02-17 13:28:26,894 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-17 13:28:41,314 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\init.py changed, reloading.
+2022-02-17 13:28:41,664 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-17 13:28:43,507 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-17 13:28:47,111 django.request 230 ERROR    Internal Server Error: /demo/init
+Traceback (most recent call last):
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\envelope\demo\views.py", line 47, in init_view
+    w.redis_init()
+  File "C:\Users\Administrator\PycharmProjects\envelope\demo\init.py", line 26, in redis_init
+    timestamp = random.randint(now, now + settings.CONTINUETIME)
+  File "F:\Python3.6\lib\random.py", line 220, in randint
+    return self.randrange(a, b+1)
+  File "F:\Python3.6\lib\random.py", line 184, in randrange
+    raise ValueError("non-integer arg 1 for randrange()")
+ValueError: non-integer arg 1 for randrange()
+2022-02-17 13:31:48,946 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 16:08:54,513 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 16:09:30,130 demo.views   21 INFO     ÇÀºì°ü-->u201
+2022-02-18 16:10:57,033 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 16:10:57,382 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 16:10:59,221 demo.views   21 INFO     ÇÀºì°ü-->u_201
+2022-02-18 16:12:38,215 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\init.py changed, reloading.
+2022-02-18 16:12:38,562 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 16:12:54,803 demo.views   21 INFO     ÇÀºì°ü-->u_199
+2022-02-18 16:13:23,455 demo.views   21 INFO     ÇÀºì°ü-->u_199
+2022-02-18 16:13:30,267 demo.views   21 INFO     ÇÀºì°ü-->u_199
+2022-02-18 16:13:31,282 demo.views   21 INFO     ÇÀºì°ü-->u_199
+2022-02-18 16:13:32,110 demo.views   21 INFO     ÇÀºì°ü-->u_199
+2022-02-18 16:14:48,930 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 16:14:49,277 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 16:14:51,690 demo.views   21 INFO     ÇÀºì°ü-->u_199
+2022-02-18 16:14:53,188 demo.views   21 INFO     ÇÀºì°ü-->u_199
+2022-02-18 16:14:53,826 demo.views   21 INFO     ÇÀºì°ü-->u_199
+2022-02-18 16:14:54,375 demo.views   21 INFO     ÇÀºì°ü-->u_199
+2022-02-18 16:14:55,046 demo.views   21 INFO     ÇÀºì°ü-->u_199
+2022-02-18 16:14:55,844 demo.views   21 INFO     ÇÀºì°ü-->u_199
+2022-02-18 16:14:56,547 demo.views   21 INFO     ÇÀºì°ü-->u_199
+2022-02-18 16:15:10,864 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 16:15:11,208 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 16:20:31,467 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 16:20:31,807 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 22:59:55,104 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:00:10,027 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\init.py changed, reloading.
+2022-02-18 23:00:10,368 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:00:33,595 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:03:12,210 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:03:21,367 django.request 230 ERROR    Internal Server Error: /demo/init
+Traceback (most recent call last):
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\envelope\demo\views.py", line 99, in init_view
+    w.redis_init()
+  File "C:\Users\Administrator\PycharmProjects\envelope\demo\init.py", line 36, in redis_init
+    for amount in generate_envelope.envelope_list(settings.MAXAMOUNT, settings.MAXENVELOPECOUNT):
+NameError: name 'generate_envelope' is not defined
+2022-02-18 23:03:59,563 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:04:14,735 demo.views   22 INFO     ÇÀºì°ü-->u_199
+2022-02-18 23:04:14,759 django.request 230 ERROR    Internal Server Error: /demo/snatch
+Traceback (most recent call last):
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\envelope\demo\views.py", line 51, in snatch_view
+    if cur_time < timestamp:
+TypeError: '<' not supported between instances of 'float' and 'bytes'
+2022-02-18 23:06:19,063 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\envelope\settings.py changed, reloading.
+2022-02-18 23:06:19,411 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:06:24,139 demo.views   22 INFO     ÇÀºì°ü-->u_199
+2022-02-18 23:07:11,532 demo.views   22 INFO     ÇÀºì°ü-->u_199
+2022-02-18 23:07:12,388 demo.views   22 INFO     ÇÀºì°ü-->u_199
+2022-02-18 23:07:12,997 demo.views   22 INFO     ÇÀºì°ü-->u_199
+2022-02-18 23:07:13,593 demo.views   22 INFO     ÇÀºì°ü-->u_199
+2022-02-18 23:07:13,614 django.request 230 ERROR    Internal Server Error: /demo/snatch
+Traceback (most recent call last):
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\envelope\demo\views.py", line 51, in snatch_view
+    if cur_time < timestamp:
+TypeError: '<' not supported between instances of 'float' and 'str'
+2022-02-18 23:07:14,203 demo.views   22 INFO     ÇÀºì°ü-->u_199
+2022-02-18 23:07:51,147 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:07:51,496 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:08:57,017 demo.views   22 INFO     ÇÀºì°ü-->u_199
+2022-02-18 23:08:57,716 demo.views   22 INFO     ÇÀºì°ü-->u_199
+2022-02-18 23:10:53,575 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\envelope\settings.py changed, reloading.
+2022-02-18 23:10:53,925 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:10:54,314 demo.views   22 INFO     ÇÀºì°ü-->u_199
+2022-02-18 23:10:55,147 demo.views   22 INFO     ÇÀºì°ü-->u_199
+2022-02-18 23:10:55,826 demo.views   22 INFO     ÇÀºì°ü-->u_199
+2022-02-18 23:10:56,326 demo.views   22 INFO     ÇÀºì°ü-->u_199
+2022-02-18 23:10:56,859 demo.views   22 INFO     ÇÀºì°ü-->u_199
+2022-02-18 23:11:01,219 demo.views   22 INFO     ÇÀºì°ü-->u_199
+2022-02-18 23:15:19,077 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:16:02,953 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:16:03,323 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:16:40,095 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:16:40,441 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:17:01,957 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:17:02,298 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:17:24,827 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:17:25,175 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:18:45,640 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:18:45,980 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:19:57,292 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:19:57,647 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:20:09,015 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:20:09,351 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:20:16,637 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:20:16,972 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:21:46,587 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:21:46,937 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:24:27,620 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:24:27,958 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:25:49,374 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:25:49,725 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:27:10,118 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:27:10,457 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:28:21,745 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:28:22,100 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:29:28,292 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:29:28,640 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:33:22,455 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:33:22,807 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:41:10,264 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:41:10,615 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:43:14,746 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:43:15,092 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:43:35,539 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:43:35,880 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:43:37,106 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:43:37,448 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:44:09,122 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:44:09,482 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:44:25,924 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:44:26,273 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:44:47,795 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:44:48,143 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:46:27,814 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:46:28,177 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:47:00,860 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:47:01,213 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:47:13,571 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:47:13,915 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:47:21,215 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:47:21,568 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:47:35,920 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:47:36,260 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:48:38,133 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:48:44,360 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:48:45,258 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:48:46,108 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:48:47,934 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:48:49,750 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:48:50,506 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:48:51,720 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:49:24,356 django.request 230 ERROR    Internal Server Error: /demo/open
+Traceback (most recent call last):
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\envelope\demo\views.py", line 93, in open_view
+    envelope_id = received_json_data['envelope_id']
+KeyError: 'envelope_id'
+2022-02-18 23:50:19,326 django.request 230 ERROR    Internal Server Error: /demo/open
+Traceback (most recent call last):
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "F:\Python3.6\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\PycharmProjects\envelope\demo\views.py", line 94, in open_view
+    logger.info("²ðºì°ü-->uid:%d envelope_id:%d " % (uid) % (envelope_id))
+TypeError: not enough arguments for format string
+2022-02-18 23:51:08,938 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:51:09,298 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:51:10,294 demo.views   94 INFO     ²ðºì°ü-->uid:199 envelope_id:1 
+2022-02-18 23:51:18,768 demo.views   94 INFO     ²ðºì°ü-->uid:199 envelope_id:2 
+2022-02-18 23:51:21,751 demo.views   94 INFO     ²ðºì°ü-->uid:199 envelope_id:3 
+2022-02-18 23:52:25,650 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:52:25,986 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:52:41,680 django.request 230 WARNING  Not Found: /demo/sntch
+2022-02-18 23:52:48,064 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:52:49,186 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:52:49,952 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:52:50,566 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:52:51,250 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:52:51,882 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:52:52,841 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:52:53,513 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:52:54,147 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:52:57,436 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:52:58,314 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:52:58,857 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:52:59,528 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:53:00,219 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:53:00,741 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:53:01,281 demo.views   23 INFO     ÇÀºì°ü-->uid:199
+2022-02-18 23:53:10,519 demo.views   94 INFO     ²ðºì°ü-->uid:199 envelope_id:3 
+2022-02-18 23:53:15,705 demo.views   94 INFO     ²ðºì°ü-->uid:199 envelope_id:1 
+2022-02-18 23:55:26,104 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-18 23:55:26,475 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-18 23:55:28,736 demo.views   94 INFO     ²ðºì°ü-->uid:199 envelope_id:1 
+2022-02-18 23:55:44,796 demo.views   94 INFO     ²ðºì°ü-->uid:199 envelope_id:2 
+2022-02-18 23:55:47,532 demo.views   94 INFO     ²ðºì°ü-->uid:199 envelope_id:3 
+2022-02-19 00:02:13,019 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:02:13,373 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:02:18,632 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:02:18,982 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:02:29,328 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:02:29,670 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:02:43,057 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:02:43,401 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:04:21,108 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:04:21,452 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:05:12,504 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:05:12,843 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:05:17,062 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:05:17,402 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:05:55,121 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:05:55,463 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:06:51,481 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:06:51,826 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:07:24,535 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:07:24,885 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:08:03,651 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:08:03,993 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:08:46,830 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:08:47,183 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:09:52,386 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:09:52,735 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:10:10,215 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:10:10,551 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:10:24,969 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:10:25,306 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:10:35,679 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:10:36,026 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:11:11,773 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:11:12,116 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:11:16,363 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:11:16,705 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:12:13,717 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:12:14,061 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:12:41,624 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:12:41,979 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:13:17,686 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:13:18,024 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:13:30,346 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:13:30,684 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:13:44,065 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:13:44,405 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:13:58,808 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:13:59,158 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:14:12,546 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:14:12,889 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:14:23,208 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:14:23,565 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:14:26,747 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:14:27,091 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:14:45,523 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:14:45,866 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:15:03,292 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:15:03,649 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:15:07,839 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:15:08,176 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:15:23,566 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:15:23,923 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:15:38,315 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:15:38,664 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:15:52,008 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:15:52,354 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:15:58,585 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:15:58,924 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:16:08,244 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:16:08,579 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:16:51,429 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:16:51,771 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:16:58,060 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:16:58,406 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:17:04,661 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:17:05,003 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:17:06,201 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:17:06,552 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 00:17:11,846 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
+2022-02-19 00:17:12,191 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader

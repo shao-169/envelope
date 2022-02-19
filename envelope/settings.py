@@ -22,9 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$ee=n=ld!rn+i)v6m4n#ocm$-w4h-#z03foo!4$)1cb5ix%)5v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = False
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -128,3 +129,73 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+ERRORCODE = {'SUCCESS': {'code': 0, 'msg': '成功'},
+             'INVALID_UID': {'code': 1, 'msg': 'uid 无效'},
+             'MAX_COUNT': {'code': 2, 'msg': '用户已达到最大抢到红包次数'},
+             'FAILURE_SNATCH': {'code': 3, 'msg': '未抢到红包'},
+             'SOLD_OUT': {'code': 4, 'msg': '红包发光了'},
+             'ENVELOPE_NOT_EXIST': {'code': 5, 'msg': '红包不存在'},
+             'SYSTEM_BUSY': {'code': 6, 'msg': '系统繁忙'},
+             'ACCESS_LIMIT': {'code': 7, 'msg': '操作过快，请稍后再试'}
+             }
+
+import os
+
+LOG_DIR = "logs"
+LOGGING = {
+    # 日志版本
+    'version': 1,
+    # 是否禁用已有的其他logger
+    'disable_existing_loggers': False,
+    # 这里我们定义一个simple格式的formatters
+    'formatters': {
+        'simple': {  # exact format is not important, this is the minimum information
+            # asctime代表打印当前的时间、name代表当前的类、lineno代表类的行数、levelname代表日志等级、message就是日志信息
+            'format': '%(asctime)s %(name)-12s %(lineno)d %(levelname)-8s %(message)s',
+        },
+    },
+    'handlers': {
+        # 控制台输出
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+        # 文本文件输出到指定文件
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'formatter': 'simple',
+            'filename': os.path.join(LOG_DIR, 'admin.log'),
+        },
+    },
+    # 系统全局级别默认的日志记录器、他是logger里面的一种特殊的记录器
+    'root': {
+        # 系统全局默认日志往控制台和文本文件同事输出
+        'handlers': ['console', 'file'],
+        'level': 'INFO',
+    },
+}
+
+USERCOUNT = 200  # 用户数目
+MAXCOUNT = 3  # 单个用户最大可抢红包次数
+PROBABILITY = 0.5  # 用户抢红包的概率
+MAXAMOUNT = 10000  # 红包总金额
+MAXENVELOPECOUNT = 1000  # 红包总个数
+# LOWERLIMITAMOUNT = 1  # 红包金额下限
+# UPPERLIMITAMOUNT = 20  # 红包金额上限
+CONTINUETIME = 600  # 活动持续时间（额外添加的参数，为了计算令牌桶的时间戳）
+
+# redis连接池
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "CONNECTION_POOL_KWARGS": {"max_connections": 100},
+            # "PASSWORD": "密码",
+            'CONNECTION_POOL_KWARGS': {'decode_responses': True}
+        }
+    }
+}
