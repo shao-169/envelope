@@ -3,6 +3,7 @@ import time
 
 from django.http import HttpResponse
 from django.conf import settings
+from django.forms import model_to_dict
 import redis
 from django_redis import get_redis_connection
 import logging
@@ -10,6 +11,7 @@ import json
 from .models import user, envelope
 from .init import warmup
 from .errorcode import errorcode
+from .producer import p_snatch, p_open
 
 # 日志实例化
 logger = logging.getLogger(__name__)
@@ -41,7 +43,7 @@ def snatch_view(request):
             return HttpResponse(json.dumps(result), content_type="application/json")
 
         # 抢红包时间戳
-        cur_time = time.time()
+        cur_time = int(time.time())
         # 列表最左侧时间戳
         timestamp = r.lpop('snatch_time_bucket')
         # 红包已经被抢光
@@ -61,6 +63,10 @@ def snatch_view(request):
         envelope_amount = r.lpop('envelope_amount')
         r.hincrby(name='global_variable', key='sent_amount', amount=envelope_amount)
 
+        # 生产者发送消息
+        msg = {'envelope_id': envelope_id, 'uid_id': uid, 'value': envelope_amount, 'opened': 0,
+               'snatch_time': cur_time}
+        producer_snatch = p_snatch(msg)
         # 懒创建
         if not r.exists(u_uid):
             r.hset(name=u_uid, key="cur_count", value=0)
@@ -100,13 +106,16 @@ def open_view(request):
         # 返回json
         result = {}
         # 红包id不存在 或者 uid与eid不一致
-        if not (r.exists(e_eid) and r.hget(e_eid, 'uid') == uid):
+        if not r.exists(e_eid) or (int(r.hget(e_eid, 'uid')) == uid) is not True:
             result = errorcode('ENVELOPE_NOT_EXIST').get_status_code()
             return HttpResponse(json.dumps(result), content_type="application/json")
 
         value = r.hget(e_eid, 'value')
         r.hincrby(name=u_uid, key="cur_amount", amount=value)
         r.delete(e_eid)
+        # 生产者发送消息
+        msg = {'envelope_id': envelope_id, 'uid_id': uid, 'value': value}
+        producer_open = p_open(msg)
         result = errorcode('SUCCESS').get_status_code()
         result['data'] = {'value': value}
         return HttpResponse(json.dumps(result), content_type="application/json")
@@ -142,14 +151,30 @@ def get_wall_list_view(request):
             result['data'] = {'amount': 0, 'envelop_list': {}}
             return HttpResponse(json.dumps(result), content_type="application/json")
 
-        if r.exists(u_uid) and finished_count + finished_amount == r.hget('ue_' + str(uid), 'check'):
-            result = errorcode('SUCCESS').get_status_code()
-            result['data'] = r.hget('ue_' + str(uid), 'cached_result')
-            return HttpResponse(json.dumps(result), content_type="application/json")
+        ue_id = 'ue_' + str(uid)
+        if r.exists(ue_id) and finished_count + finished_amount == r.hget(ue_id, 'check'):
+            return HttpResponse(r.hget(ue_id, 'cached_reslut'), content_type="application/json")
+
+        res = envelope.objects.filter(uid_id=uid)
+
+        json_list = []
+        for row in res:
+            json_dict = model_to_dict(row)
+            json_list.append(json_dict)
+
+        result = errorcode('SUCCESS').get_status_code()
+        result['data']['amount'] = cur_amount
+        result['data']['envelope_list'] = json_list
+
+        # 写入缓存优化查询
+        r.hset(ue_id, 'check', finished_amount + finished_count)
+        r.hset(ue_id, 'cached_result', json.dumps(result))
+        return HttpResponse(json.dumps(result), content_type="application/json")
 
 
 def init_view(request):
     w = warmup()
     w.mysql_init()
     w.redis_init()
+
     return HttpResponse('已初始化')

@@ -444,3 +444,313 @@ TypeError: not enough arguments for format string
 2022-02-19 00:17:06,552 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
 2022-02-19 00:17:11,846 django.utils.autoreload 251 INFO     C:\Users\Administrator\PycharmProjects\envelope\demo\views.py changed, reloading.
 2022-02-19 00:17:12,191 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 05:30:26,190 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 05:32:45,841 django.request 230 WARNING  Not Found: /favicon.ico
+2022-02-19 05:44:44,238 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 05:45:27,602 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 05:45:33,133 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 05:45:34,826 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 05:45:36,194 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 05:45:37,293 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 05:45:38,292 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 05:45:39,294 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 05:45:42,376 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 05:45:44,099 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 05:45:45,123 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 05:45:46,033 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 05:45:46,891 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 05:45:47,708 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 06:20:31,299 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 06:33:34,454 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 06:33:35,159 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 06:43:59,024 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 06:43:59,645 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 06:44:13,240 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 06:44:40,450 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 06:49:46,210 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 06:50:01,225 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 07:06:02,327 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 07:06:19,503 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 07:06:19,624 django.request 230 ERROR    Internal Server Error: /demo/snatch
+Traceback (most recent call last):
+  File "/home/shao/pythonProject/envelope/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/shao/pythonProject/envelope/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shao/pythonProject/envelope/demo/views.py", line 67, in snatch_view
+    producer_snatch = p_snatch(msg)
+  File "/home/shao/pythonProject/envelope/demo/producer.py", line 17, in __init__
+    ret = self.producer.send_sync(msg)
+  File "/home/shao/pythonProject/envelope/venv/lib/python3.6/site-packages/rocketmq/client.py", line 214, in send_sync
+    ffi_check(dll.SendMessageSync(self._handle, msg, ctypes.pointer(cres)))
+  File "/home/shao/pythonProject/envelope/venv/lib/python3.6/site-packages/rocketmq/exceptions.py", line 27, in ffi_check
+    raise exc_cls(msg)
+rocketmq.exceptions.ProducerSendSyncFailed: No route info of this topic: snatch,error:-1,in file rocketmq-client-cpp/src/producer/DefaultMQProducer.cpp line:379
+2022-02-19 07:07:57,808 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 07:08:03,791 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 07:08:05,430 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 07:08:06,527 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 07:08:06,636 django.request 230 ERROR    Internal Server Error: /demo/snatch
+Traceback (most recent call last):
+  File "/home/shao/pythonProject/envelope/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/shao/pythonProject/envelope/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/shao/pythonProject/envelope/demo/views.py", line 67, in snatch_view
+    producer_snatch = p_snatch(msg)
+  File "/home/shao/pythonProject/envelope/demo/producer.py", line 17, in __init__
+    ret = self.producer.send_sync(msg)
+  File "/home/shao/pythonProject/envelope/venv/lib/python3.6/site-packages/rocketmq/client.py", line 214, in send_sync
+    ffi_check(dll.SendMessageSync(self._handle, msg, ctypes.pointer(cres)))
+  File "/home/shao/pythonProject/envelope/venv/lib/python3.6/site-packages/rocketmq/exceptions.py", line 27, in ffi_check
+    raise exc_cls(msg)
+rocketmq.exceptions.ProducerSendSyncFailed: No route info of this topic: snatch,error:-1,in file rocketmq-client-cpp/src/producer/DefaultMQProducer.cpp line:379
+2022-02-19 07:08:07,696 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 07:10:48,220 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 07:10:57,944 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 07:10:58,218 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00002BD9000090CBD1100100', offset=13)
+2022-02-19 07:11:02,914 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 07:11:04,209 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 07:11:04,230 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00002BD9000004E4D1100200', offset=14)
+2022-02-19 07:11:05,847 demo.views   23 INFO     抢红包-->uid:169
+2022-02-19 07:11:05,874 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00002BD900006FEAD1100300', offset=15)
+2022-02-19 07:15:36,694 demo.views   23 INFO     抢红包-->uid:199
+2022-02-19 07:15:36,708 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00002BD90000670CD6100400', offset=16)
+2022-02-19 07:15:38,889 demo.views   23 INFO     抢红包-->uid:199
+2022-02-19 07:15:40,362 demo.views   23 INFO     抢红包-->uid:199
+2022-02-19 07:15:41,622 demo.views   23 INFO     抢红包-->uid:199
+2022-02-19 07:15:42,695 demo.views   23 INFO     抢红包-->uid:199
+2022-02-19 07:15:42,722 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00002BD90000E123D6100500', offset=17)
+2022-02-19 07:15:44,114 demo.views   23 INFO     抢红包-->uid:199
+2022-02-19 07:15:45,180 demo.views   23 INFO     抢红包-->uid:199
+2022-02-19 07:15:46,263 demo.views   23 INFO     抢红包-->uid:199
+2022-02-19 07:15:47,213 demo.views   23 INFO     抢红包-->uid:199
+2022-02-19 07:15:48,261 demo.views   23 INFO     抢红包-->uid:199
+2022-02-19 07:15:49,187 demo.views   23 INFO     抢红包-->uid:199
+2022-02-19 07:15:49,200 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00002BD90000353DD6100600', offset=18)
+2022-02-19 07:17:24,947 demo.views   23 INFO     抢红包-->uid:197
+2022-02-19 07:17:24,961 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00002BD9000045B3D7100700', offset=19)
+2022-02-19 07:17:25,984 demo.views   23 INFO     抢红包-->uid:197
+2022-02-19 07:17:26,001 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00002BD9000054B7D7100800', offset=20)
+2022-02-19 07:17:26,922 demo.views   23 INFO     抢红包-->uid:197
+2022-02-19 07:18:59,532 demo.views   23 INFO     抢红包-->uid:192
+2022-02-19 07:19:00,757 demo.views   23 INFO     抢红包-->uid:192
+2022-02-19 07:19:00,772 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00002BD900008829D9100900', offset=21)
+2022-02-19 07:19:03,777 demo.views   23 INFO     抢红包-->uid:192
+2022-02-19 07:19:03,788 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00002BD900005035D9100A00', offset=22)
+2022-02-19 07:23:43,891 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 07:24:13,369 demo.views   23 INFO     抢红包-->uid:192
+2022-02-19 07:24:14,936 demo.views   23 INFO     抢红包-->uid:192
+2022-02-19 07:24:14,969 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000FA130000D0F4DD100100', offset=23)
+2022-02-19 07:29:21,304 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/producer.py changed, reloading.
+2022-02-19 07:29:21,958 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 07:29:53,932 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 07:30:08,866 demo.views   23 INFO     抢红包-->uid:192
+2022-02-19 07:30:08,894 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000741800005D5BE3100100', offset=0)
+2022-02-19 07:30:49,429 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 07:30:55,431 demo.views   23 INFO     抢红包-->uid:192
+2022-02-19 07:30:56,792 demo.views   23 INFO     抢红包-->uid:192
+2022-02-19 07:30:57,767 demo.views   23 INFO     抢红包-->uid:192
+2022-02-19 07:30:57,783 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000117200005B1AE4100100', offset=1)
+2022-02-19 09:44:57,573 demo.views   23 INFO     抢红包-->uid:191
+2022-02-19 09:44:57,585 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F000011720000D5C75E110200', offset=7)
+2022-02-19 09:51:47,192 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/producer.py changed, reloading.
+2022-02-19 09:51:47,817 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 09:52:17,046 demo.views   23 INFO     抢红包-->uid:191
+2022-02-19 09:52:19,114 demo.views   23 INFO     抢红包-->uid:191
+2022-02-19 09:52:19,123 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00000E930000998465110100', offset=24)
+2022-02-19 09:54:48,396 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 09:54:49,032 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 09:54:57,416 demo.views   24 INFO     抢红包-->uid:191
+2022-02-19 09:54:58,800 demo.views   24 INFO     抢红包-->uid:191
+2022-02-19 09:54:59,933 demo.views   24 INFO     抢红包-->uid:191
+2022-02-19 09:55:00,890 demo.views   24 INFO     抢红包-->uid:191
+2022-02-19 09:55:01,895 demo.views   24 INFO     抢红包-->uid:191
+2022-02-19 09:55:01,905 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000A1480000760068110100', offset=25)
+2022-02-19 09:56:09,383 demo.views   24 INFO     抢红包-->uid:190
+2022-02-19 09:56:10,556 demo.views   24 INFO     抢红包-->uid:190
+2022-02-19 09:56:11,498 demo.views   24 INFO     抢红包-->uid:190
+2022-02-19 09:56:12,485 demo.views   24 INFO     抢红包-->uid:190
+2022-02-19 09:56:13,462 demo.views   24 INFO     抢红包-->uid:190
+2022-02-19 09:56:14,393 demo.views   24 INFO     抢红包-->uid:190
+2022-02-19 09:56:14,402 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000A1480000A81B69110200', offset=26)
+2022-02-19 10:31:36,124 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 10:31:36,810 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 10:37:10,595 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 10:37:11,308 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 10:46:16,764 demo.views   99 INFO     拆红包-->uid:190 envelope_id:7 
+2022-02-19 10:49:27,069 demo.views   99 INFO     拆红包-->uid:190 envelope_id:7 
+2022-02-19 10:50:13,782 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 10:50:14,477 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 10:50:17,867 demo.views   99 INFO     拆红包-->uid:190 envelope_id:7 
+2022-02-19 10:50:17,918 demo.producer 35 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C600007E999A110100', offset=0)
+2022-02-19 10:52:01,385 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:52:02,839 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:52:02,853 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C6000086339C110200', offset=27)
+2022-02-19 10:52:04,056 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:52:05,163 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:52:06,141 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:52:07,940 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:52:08,941 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:52:08,950 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C600005C4B9C110300', offset=28)
+2022-02-19 10:52:10,047 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:52:11,028 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:52:11,919 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:52:11,932 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C6000000579C110400', offset=29)
+2022-02-19 10:52:12,793 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:52:29,667 demo.views   99 INFO     拆红包-->uid:200 envelope_id:8 
+2022-02-19 10:52:29,676 demo.producer 35 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C60000509C9C110500', offset=1)
+2022-02-19 10:53:40,405 demo.views   99 INFO     拆红包-->uid:200 envelope_id:8 
+2022-02-19 10:53:46,273 demo.views   99 INFO     拆红包-->uid:200 envelope_id:9 
+2022-02-19 10:53:46,281 demo.producer 35 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C600008FC79D110600', offset=2)
+2022-02-19 10:54:24,455 demo.views   99 INFO     拆红包-->uid:200 envelope_id:10 
+2022-02-19 10:54:24,465 demo.producer 35 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C60000B65C9E110700', offset=3)
+2022-02-19 10:57:26,041 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:57:27,149 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:57:28,160 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:57:29,139 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:57:29,147 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C60000212EA1110800', offset=30)
+2022-02-19 10:57:30,308 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:57:30,315 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C60000B132A1110900', offset=31)
+2022-02-19 10:57:31,280 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 10:57:31,291 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C600008136A1110A00', offset=32)
+2022-02-19 10:57:37,069 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 10:57:37,962 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 10:57:38,918 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 10:57:38,927 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C600005654A1110B00', offset=33)
+2022-02-19 10:57:39,862 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 10:57:40,735 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 10:57:41,605 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 10:57:42,485 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 10:57:43,398 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 10:57:44,247 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 10:57:45,090 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 10:57:45,959 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 10:57:46,887 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 10:57:46,895 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C600007573A1110C00', offset=34)
+2022-02-19 10:57:47,757 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 10:57:47,764 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C60000DA76A1110D00', offset=35)
+2022-02-19 10:57:48,650 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 10:57:55,014 demo.views   24 INFO     抢红包-->uid:198
+2022-02-19 10:57:55,959 demo.views   24 INFO     抢红包-->uid:198
+2022-02-19 10:57:56,831 demo.views   24 INFO     抢红包-->uid:198
+2022-02-19 10:57:56,841 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C600004F9AA1110E00', offset=36)
+2022-02-19 10:57:57,673 demo.views   24 INFO     抢红包-->uid:198
+2022-02-19 10:57:57,682 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C60000969DA1110F00', offset=37)
+2022-02-19 10:57:58,488 demo.views   24 INFO     抢红包-->uid:198
+2022-02-19 10:57:59,550 demo.views   24 INFO     抢红包-->uid:198
+2022-02-19 10:58:00,503 demo.views   24 INFO     抢红包-->uid:198
+2022-02-19 10:58:01,476 demo.views   24 INFO     抢红包-->uid:198
+2022-02-19 10:58:02,396 demo.views   24 INFO     抢红包-->uid:198
+2022-02-19 10:58:02,406 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C600000CB0A1111000', offset=38)
+2022-02-19 10:58:08,933 demo.views   99 INFO     拆红包-->uid:200 envelope_id:1 
+2022-02-19 10:58:08,941 demo.producer 35 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C6000093C9A1111100', offset=4)
+2022-02-19 10:58:13,433 demo.views   99 INFO     拆红包-->uid:200 envelope_id:2 
+2022-02-19 10:58:13,443 demo.producer 35 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C6000028DBA1111200', offset=5)
+2022-02-19 10:58:25,329 demo.views   99 INFO     拆红包-->uid:199 envelope_id:4 
+2022-02-19 10:58:25,337 demo.producer 35 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C60000A009A2111300', offset=6)
+2022-02-19 10:58:29,026 demo.views   99 INFO     拆红包-->uid:199 envelope_id:5 
+2022-02-19 10:58:29,037 demo.producer 35 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C600001318A2111400', offset=7)
+2022-02-19 10:58:37,336 demo.views   99 INFO     拆红包-->uid:198 envelope_id:6 
+2022-02-19 10:58:37,345 demo.producer 35 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000E3C600008638A2111500', offset=8)
+2022-02-19 10:58:48,083 demo.views   99 INFO     拆红包-->uid:198 envelope_id:6 
+2022-02-19 11:00:58,208 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:00:58,850 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:01:16,925 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 11:01:16,943 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000367D0000F4A7A4110100', offset=39)
+2022-02-19 11:01:19,167 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 11:01:20,569 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 11:01:21,534 demo.views   24 INFO     抢红包-->uid:200
+2022-02-19 11:01:21,544 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000367D0000EDB9A4110200', offset=40)
+2022-02-19 11:01:26,640 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:01:27,764 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:01:27,777 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000367D000045D2A4110300', offset=41)
+2022-02-19 11:01:28,748 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:01:29,547 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:01:29,555 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F0000367D00003AD9A4110400', offset=42)
+2022-02-19 11:01:42,388 demo.views   99 INFO     拆红包-->uid:200 envelope_id:1 
+2022-02-19 11:03:09,830 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:03:10,475 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:03:13,428 demo.views   99 INFO     拆红包-->uid:200 envelope_id:1 
+2022-02-19 11:03:13,441 demo.producer 35 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00004D5E0000066FA6110100', offset=9)
+2022-02-19 11:03:19,468 demo.views   99 INFO     拆红包-->uid:200 envelope_id:1 
+2022-02-19 11:03:51,185 demo.views   99 INFO     拆红包-->uid:200 envelope_id:2 
+2022-02-19 11:03:51,195 demo.producer 35 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00004D5E00008002A7110200', offset=10)
+2022-02-19 11:03:55,999 demo.views   99 INFO     拆红包-->uid:200 envelope_id:23 
+2022-02-19 11:04:02,386 demo.views   99 INFO     拆红包-->uid:199 envelope_id:23 
+2022-02-19 11:04:06,408 demo.views   99 INFO     拆红包-->uid:199 envelope_id:3 
+2022-02-19 11:04:06,416 demo.producer 35 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00004D5E0000F63DA7110300', offset=11)
+2022-02-19 11:06:39,427 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:06:40,592 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:06:41,486 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:06:42,417 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:06:42,427 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00004D5E0000609FA9110400', offset=43)
+2022-02-19 11:06:45,368 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:06:46,561 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:06:46,569 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00004D5E00008FAFA9110500', offset=44)
+2022-02-19 11:06:53,339 demo.views   99 INFO     拆红包-->uid:199 envelope_id:1 
+2022-02-19 11:06:53,348 demo.producer 35 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00004D5E000009CAA9110600', offset=12)
+2022-02-19 11:09:27,372 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:09:28,459 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:09:29,416 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:09:29,425 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00004D5E0000B72BAC110700', offset=45)
+2022-02-19 11:09:30,842 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:09:30,849 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00004D5E00004731AC110800', offset=46)
+2022-02-19 11:09:31,824 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:09:34,121 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:09:35,073 demo.views   24 INFO     抢红包-->uid:199
+2022-02-19 11:09:35,080 demo.producer 18 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00004D5E0000CF41AC110900', offset=47)
+2022-02-19 11:09:39,477 demo.views   99 INFO     拆红包-->uid:199 envelope_id:1 
+2022-02-19 11:09:39,485 demo.producer 35 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00004D5E00000353AC110A00', offset=13)
+2022-02-19 11:09:43,020 demo.views   99 INFO     拆红包-->uid:199 envelope_id:1 
+2022-02-19 11:09:46,544 demo.views   99 INFO     拆红包-->uid:199 envelope_id:2 
+2022-02-19 11:09:46,555 demo.producer 35 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00004D5E0000A06EAC110B00', offset=14)
+2022-02-19 11:15:19,738 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:15:20,556 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:17:11,845 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:17:12,613 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:40:33,879 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:40:34,510 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:41:53,312 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:41:54,203 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:42:30,916 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:42:31,766 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:43:31,201 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:43:31,816 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:43:53,529 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:43:54,209 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:44:32,271 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:44:32,872 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:44:40,354 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:44:41,181 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:44:42,305 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:44:43,263 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:44:48,838 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:44:49,512 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:45:15,912 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:45:16,576 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:45:26,774 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:45:27,482 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:45:28,616 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:45:29,284 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:45:35,809 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:45:36,452 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:45:38,907 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:45:39,763 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:45:47,292 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:45:47,955 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:45:51,415 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:45:52,036 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:48:33,962 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:48:34,630 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:48:38,360 demo.views   129 INFO     查询余额和红包列表-->uid:199
+2022-02-19 11:53:00,310 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:53:00,954 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:53:02,047 demo.views   129 INFO     查询余额和红包列表-->uid:199
+2022-02-19 11:53:15,448 demo.views   100 INFO     拆红包-->uid:199 envelope_id:3 
+2022-02-19 11:53:15,458 demo.producer 35 INFO     SendResult(status=<SendStatus.OK: 0>, msg_id='0101007F00003E730000A83DD4110100', offset=15)
+2022-02-19 11:53:19,178 demo.views   129 INFO     查询余额和红包列表-->uid:199
+2022-02-19 11:57:46,257 django.utils.autoreload 251 INFO     /home/shao/pythonProject/envelope/demo/views.py changed, reloading.
+2022-02-19 11:57:46,887 django.utils.autoreload 637 INFO     Watching for file changes with StatReloader
+2022-02-19 11:57:49,043 demo.views   129 INFO     查询余额和红包列表-->uid:199
+2022-02-19 11:57:51,440 demo.views   129 INFO     查询余额和红包列表-->uid:199
